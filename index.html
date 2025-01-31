@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign-up</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <div class="left">
+            <div class="transparent">
+                <div class="logo">
+                    <img src="images/odin-lined.png">
+                </div>
+
+                <div class="odin"><span>ODIN</span></div>
+            </div>
+
+            <footer class="footer">
+                <p class="footer">
+                    photo by <a href="https://unsplash.com/photos/a-street-sign-hangs-from-a-building-TTUvyE7MwkM" class="footerLink">Lexi Laginess</a>
+                    on <a href="https://unsplash.com/" class="footerLink">Unsplash</a>
+                </p>
+                <p class="footer">
+                    created by <a href="https://github.com/francisnicholasramos" class="footerLink">francisnicholasramos</a>
+                    for <a href="https://www.theodinproject.com/" class="footerLink">The Odin project</a>
+                </p>
+            </footer>
+
+        </div>
+
+        <div class="right">
+            <h2 class="message">
+                This is not a real online service! You know you need something like this in your life to help you realize your deepest dreams. Sign up now to get started. <br> <br>
+
+                You know you want to.
+            </h2>
+
+            <form method="post">
+                <h2>Let's do this!</h2>                 
+
+                <div class="inputs">
+                    <div>
+                        <label for="fname">FIRST NAME</label><br>
+                        <input type="text" id="fname" required>
+                    </div>
+
+
+                    <div class="moveRight">
+                        <label for="lname">LAST NAME</label><br>
+                        <input type="text" id="lname" required>
+                    </div>
+                </div>
+
+                <div class="inputs">
+                    <div>
+                        <label for="email">EMAIL</label><br>
+                        <input type="email" id="email" required>
+                    </div>
+
+
+                    <div class="moveRight">
+                        <label for="number">PHONE NUMBER</label><br>
+                        <input type="number" id="number" required maxlength="11">
+                    </div>
+                </div>
+                
+                <div class="inputs">
+                    <div>
+                        <label for="password">PASSWORD</label><br>
+                        <input type="password" id="password" required>
+                    </div>
+
+
+                    <div class="moveRight">
+                        <label for="confirm">CONFIRM PASSWORD</label><br>
+                        <input type="password" id="confirm" required>
+                        <p class="hidden"></p>
+                    </div>
+                </div>
+
+                <div class="submit">
+                    <div>
+                        <button>Create Account</button>
+                    </div><br>
+
+                    <div>
+                        <span>Already have an account? <a href="#">Log in</a></span>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+    
+    <script>
+        const form = document.querySelector('form')
+        const password = document.querySelector('#password')
+        const confirm = document.querySelector('#confirm')
+        const error = document.querySelector('.hidden');
+        
+        form.addEventListener('input', () => {
+            if (confirm.value != password.value) {
+                error.textContent = 'Password does not match!'
+            } else {
+                error.textContent = ''
+            }
+        })
+
+    </script>
+</body>
+</html>
